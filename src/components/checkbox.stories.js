@@ -19,19 +19,20 @@ export const actionsData = {
 
 };
 
-const Template = args => ({
+const Template = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
     components: { Checkbox },
     setup() {
-        return { args, ...actionsData };
-    },
-    template: '<Checkbox v-bind="args" />',
+        return { args };
+    },//v-bind="args"
+    template: '<Checkbox v-bind="$props" />',
 });
 export const Default = Template.bind({});
 Default.args = {
     checkbox: {
 
         title: 'Check box with a tick',
-        state: 'CHECKBOX_DEFAULT',
+        disable: false,
     },
 };
 
@@ -42,6 +43,5 @@ Hyphen.args = {
     checkbox: {
         ...Default.args.checkbox,
         title: 'Checkbox with a hyphen',
-        state: 'CHECKBOX_HYPHEN',
     },
 };
