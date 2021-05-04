@@ -1,7 +1,10 @@
-import { styled } from '@egoist/vue-emotion'
- 
-const Button = styled('label')`
-    font-size: 150px;
+import { styled, VueEmotion } from '@egoist/vue-emotion'
+
+import Vue from 'vue'
+Vue.use(VueEmotion)
+
+const Label = styled('label')`
+    font-size: 24px;
     font-color:red;
 `
 export default {
@@ -22,7 +25,7 @@ export default {
                 <div>
                     <input type="checkbox" id="convrrt" value="{checkbox.status}">
                         </input>
-                    <label for="convrrt"> Blue whale decided to have shrimp </label>
+                    <Label for="convrrt"> Blue whale decided to have shrimp </Label>
                 </div>
         )
     },
