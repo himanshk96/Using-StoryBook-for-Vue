@@ -10,8 +10,12 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@egoist/vue-emotion": "^0.6.2",
+    "@emotion/css": "^11.1.3",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "emotion": "^11.0.0",
+    "vue": "^2.6.11",
+    "vue-emotion": "^0.4.29"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",

@@ -9,16 +9,14 @@ export default {
     title: 'Checkbox',
     //👇 Our events will be mapped in Storybook UI
     argTypes: {
-        onCheckboxRound: {},
-        onPinTask: {},
-        onArchiveTask: {},
+        onCheckboxHyphen: {},
+
     },
 };
 
 export const actionsData = {
-    onCheckboxRound: action('round-checkbox'),
-    onPinTask: action('pin-task'),
-    onArchiveTask: action('archive-task'),
+    onCheckboxHyphen: action('Hyphen-checkbox'),
+
 };
 
 const Template = args => ({
@@ -32,31 +30,18 @@ export const Default = Template.bind({});
 Default.args = {
     checkbox: {
 
-        title: 'Test Task',
-        state: 'TASK_INBOX',
+        title: 'Check box with a tick',
+        state: 'CHECKBOX_DEFAULT',
     },
 };
 
-export const Pinned = Template.bind({});
-Pinned.args = {
-    checkbox: {
-        ...Default.args.checkbox,
-        state: 'TASK_PINNED',
-    },
-};
 
-export const Round = Template.bind({});
-Round.args = {
-    checkbox: {
-        ...Default.args.checkbox,
-        state: 'CHECKBOX_ROUND',
-    },
-};
 
-export const Archived = Template.bind({});
-Archived.args = {
+export const Hyphen = Template.bind({});
+Hyphen.args = {
     checkbox: {
         ...Default.args.checkbox,
-        state: 'TASK_ARCHIVED',
+        title: 'Checkbox with a hyphen',
+        state: 'CHECKBOX_HYPHEN',
     },
 };
