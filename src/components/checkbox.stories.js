@@ -25,7 +25,7 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
     checkbox: {
-        title: 'Check box with a tick',
+        title: 'Blue whale decided to have shrimp',
         disable: false,
     },
 };

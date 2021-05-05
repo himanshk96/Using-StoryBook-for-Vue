@@ -5,13 +5,15 @@ Vue.use(VueEmotion)
 
 const Label = styled('label')`
     font-size: 24px;
-    height: 4em;
+    max-width: 230px;
+    font-stretch: expanded;
+    margin-left: 8px;
 `
 const Checkbox = styled('input')`
     &:hover {
         outline:none;
-        box-shadow: 0 0 2px 2px rgba(235, 239, 243);
-        border-radius: 10px;
+        box-shadow: 0 0 2px 2px rgb(200,200,200);
+        border-radius: 4px;
     }
 
     &:disabled{
@@ -24,13 +26,8 @@ const Checkbox = styled('input')`
     }
 
     transform: scale(2);
-    margin-right: 8px;
-    &:checked {
-        background-image: url("./assets/logo.png");
-        background-size: 90%;
-        background-position: right center;
-        background-repeat: no-repeat;
-   }
+    
+
 `
 
 export default {
@@ -51,7 +48,7 @@ export default {
                 <div>
                     <Checkbox type="checkbox" disabled={this.checkbox.disable} >
                         </Checkbox>
-                    <Label for="convrrt"> Blue whale decided to have shrimp </Label>
+                    <Label for="convrrt"> {this.checkbox.title} </Label>
                 </div>
         )
     },
