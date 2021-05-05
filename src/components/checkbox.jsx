@@ -9,77 +9,86 @@ const Label = styled('label')`
     font-stretch: expanded;
     margin-left: 8px;
 `
+
 const Checkbox = styled('input')
-`
+    `
+    width: 20px;
+    height: 20px;
+    background-color: silver;
+
+    &:indeterminate{
+        &:hover{
+            outline: none;
+        }
+        &:focus-visible {
+            outline-offset:3px;
+            border: 5px solid blue; 
+            border-radius: 4px;
+        }
+    }
+    &:checked {
+        bg-color: white;
+        &::after {
+            border: 2px solid white;
+        }
+        &:focus-visible {
+            outline-offset:3px;
+            border: 5px solid blue; 
+            border-radius: 4px;
+        }
+        &:hover {
+            outline:none;
+            box-shadow: 0 0 5px 3px silver;
+
+        }
+    }
+    &:focus-visible {
+        outline-offset:0px;
+        background-color: blue;
+        border: 5px solid blue; 
+        background-color: blue;
+    }
     &:hover {
-        outline:none;
-        box-shadow: 0 0 2px 2px rgb(200,200,200);
-        border-radius: 4px;
+        box-shadow: 0 0 5px 3px silver;
     }
-
-    &:disabled{
-        border:3px solid rgb(45,92,197);
-    }
-
-    &:disabled {
-        border-radius: 4px;
-        border:3px solid rgb(45,92,197);
-    }
-
-    &:focus {
-        border:1px solid rgb(45,92,197);
-        padding: 10px;
-    }
-    transform: scale(2);
 `
 
 export default {
-   
+
     name: 'Checkbox',
-    
+
     props: {
         checkbox: {
-          type: Object,
-          required: true,
-          default: () => ({   title: '',disable:'' }),
-          validator: checkbox => ['title','disable'].every(key => key in checkbox),
+            type: Object,
+            required: true,
+            default: () => ({ title: '', disable: '' }),
+            validator: checkbox => ['title', 'disable'].every(key => key in checkbox),
         },
     },
 
-    created(){
-        
-    },
-    mounted() {
-        this.$nextTick(() => {
-            console.log(this);
-        console.log(this.$refs);
-        console.log(this.$refs.ci);
-        // this.$refs['ci'].indeterminate=true;
-        
-        })
-      }
-      ,methods:{
-        
-        handleChange(e){
-            // console.log("This change")
-            console.log(this.checkbox.hyphenated,this.$refs['ci'].checked)
-            
-            if (this.checkbox.hyphenated && this.$refs['ci'].checked)
-                this.$refs['ci'].indeterminate=true;
-        }
-      },
+    created() {
 
-    render(){
+    },
+    methods: {
+
+        handleChange(e) {
+            // console.log(this.checkbox.hyphenated, this.$refs['ci'].checked)
+            if (this.checkbox.hyphenated && this.$refs['ci'].checked)
+                this.$refs['ci'].indeterminate = true;
+        }
+    },
+
+    render() {
 
         return (
-                <div>
-                    <Checkbox ref="ci" type="checkbox" disabled={this.checkbox.disable} onChange={this.handleChange}>
-                        </Checkbox>
-                    <Label for="convrrt"> {this.checkbox.title} </Label>
-                </div>
+            <div>
+                <Checkbox ref="ci" type="checkbox" disabled={this.checkbox.disable} onChange={this.handleChange}>
+                </Checkbox>
+                <Label for="convrrt"> {this.checkbox.title} </Label>
+            </div>
         )
     },
-  };
+};
 
 
 
