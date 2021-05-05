@@ -28,3 +28,14 @@ Default.args = {
         disable: false,
     },
 };
+
+
+
+export const Hyphen = Template.bind({});
+Hyphen.args = {
+    checkbox: {
+        ...Default.args.checkbox,
+        title: 'Checkbox with a hyphen',
+        hyphenated: true,
+    },
+};
