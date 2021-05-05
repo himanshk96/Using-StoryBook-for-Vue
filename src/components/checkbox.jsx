@@ -25,6 +25,12 @@ const Checkbox = styled('input')`
 
     transform: scale(2);
     margin-right: 8px;
+    &:checked {
+        background-image: url("./assets/logo.png");
+        background-size: 90%;
+        background-position: right center;
+        background-repeat: no-repeat;
+   }
 `
 
 export default {

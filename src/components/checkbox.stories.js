@@ -9,15 +9,10 @@ export default {
     title: 'Checkbox',
     //👇 Our events will be mapped in Storybook UI
     argTypes: {
-        onCheckboxHyphen: {},
 
     },
 };
 
-export const actionsData = {
-    onCheckboxHyphen: action('Hyphen-checkbox'),
-
-};
 
 const Template = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
@@ -30,18 +25,7 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
     checkbox: {
-
         title: 'Check box with a tick',
         disable: false,
-    },
-};
-
-
-
-export const Hyphen = Template.bind({});
-Hyphen.args = {
-    checkbox: {
-        ...Default.args.checkbox,
-        title: 'Checkbox with a hyphen',
     },
 };
