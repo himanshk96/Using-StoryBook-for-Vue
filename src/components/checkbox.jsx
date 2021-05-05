@@ -20,6 +20,11 @@ const Checkbox = styled('input')`
         border:3px solid rgb(45,92,197);
     }
 
+    &:disabled {
+        border-radius: 4px;
+        border:3px solid rgb(45,92,197);
+    }
+
     &:focus {
         border-radius: 4px;
         border:1px solid rgb(45,92,197);
