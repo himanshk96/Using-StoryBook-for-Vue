@@ -26,13 +26,10 @@ const Checkbox = styled('input')`
     }
 
     &:focus {
-        border-radius: 4px;
         border:1px solid rgb(45,92,197);
+        padding: 10px;
     }
-
     transform: scale(2);
-    
-
 `
 
 export default {
@@ -57,8 +54,6 @@ export default {
                 </div>
         )
     },
-    
-    
   };
 
 
