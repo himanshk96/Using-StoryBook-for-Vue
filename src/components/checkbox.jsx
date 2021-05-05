@@ -7,7 +7,8 @@ const Label = styled('label')`
     font-size: 24px;
     height: 4em;
 `
-const Checkbox = styled('input')`
+const Checkbox = styled('input')
+`
     &:hover {
         outline:none;
         box-shadow: 0 0 2px 2px rgba(235, 239, 243);
@@ -39,11 +40,35 @@ export default {
           validator: checkbox => ['title','disable'].every(key => key in checkbox),
         },
     },
-    
+
+    created(){
+        
+    },
+    mounted() {
+        this.$nextTick(() => {
+            console.log(this);
+        console.log(this.$refs);
+        console.log(this.$refs.ci);
+        // this.$refs['ci'].indeterminate=true;
+        
+        })
+      }
+      ,methods:{
+        
+        handleChange(e){
+            // console.log("This change")
+            console.log(this.checkbox.hyphenated,this.$refs['ci'].checked)
+            
+            if (this.checkbox.hyphenated && this.$refs['ci'].checked)
+                this.$refs['ci'].indeterminate=true;
+        }
+      },
+
     render(){
+
         return (
                 <div>
-                    <Checkbox type="checkbox" disabled={this.checkbox.disable} >
+                    <Checkbox ref="ci" type="checkbox" disabled={this.checkbox.disable} onChange={this.handleChange}>
                         </Checkbox>
                     <Label for="convrrt"> Blue whale decided to have shrimp </Label>
                 </div>

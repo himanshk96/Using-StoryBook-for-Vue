@@ -43,5 +43,6 @@ Hyphen.args = {
     checkbox: {
         ...Default.args.checkbox,
         title: 'Checkbox with a hyphen',
+        hyphenated: true,
     },
 };
