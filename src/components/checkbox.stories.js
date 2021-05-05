@@ -21,6 +21,7 @@ const Template = (args, { argTypes }) => ({
     },//v-bind="args"
     template: '<Checkbox v-bind="$props" />',
 });
+
 export const Default = Template.bind({});
 Default.args = {
     checkbox: {
@@ -29,13 +30,11 @@ Default.args = {
     },
 };
 
-
-
 export const Hyphen = Template.bind({});
 Hyphen.args = {
     checkbox: {
         ...Default.args.checkbox,
-        title: 'Checkbox with a hyphen',
+        title: 'Blue whale decided to have shrimp',
         hyphenated: true,
     },
 };
